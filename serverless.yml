@@ -1,4 +1,4 @@
-service: ping-my-sites
+service: wake-my-sites
 
 provider:
   name: aws
@@ -8,7 +8,5 @@ functions:
   wake:
     handler: handler.wake
     events:
-      - schedule:
-        rate: cron(0,20，40 * * * *)
-        enabled: true
+      - schedule: rate(25 minutes)
     timeout: 20
